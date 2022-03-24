@@ -61,7 +61,7 @@ if (isNaN(passwordLength)) {
 }
 
 console.log(typeof passwordLengthNumber);
-
+//Prompting if user wants special characters
 var specialCharacters = confirm("Would you like to include special character's? Press Ok for yes, Cancel for no.");
 
 if (specialCharacters == true) {
@@ -71,7 +71,7 @@ if (specialCharacters == true) {
   specialCharacters = false;
   console.log(specialCharacters);
 }
-
+//Prompting if user wants numeric characters
 var numericCharacters = confirm("Would you like to include numbers? Press Ok for yes, Cancel for no.");
 
 if (numericCharacters == true) {
@@ -80,4 +80,24 @@ if (numericCharacters == true) {
 } else {
   numericCharacters = false;
   console.log(numericCharacters);
+}
+//Prompting if user wants lower case characters
+var lowercaseCharacters = confirm("Would you like to include lower case letters? Press Ok for yes, Cancel for no.");
+
+if (lowercaseCharacters == true) {
+  lowercaseCharacters = true;
+  console.log(lowercaseCharacters);
+} else {
+  lowercaseCharacters = false;
+  console.log(lowercaseCharacters);
+}
+//Prompting if user wants upper case characters
+var uppercaseCharacters = confirm("Would you like to include upper case characters? Press Ok for yes, Cancel for no.");
+
+if (uppercaseCharacters == true) {
+  uppercaseCharacters = true;
+  console.log(uppercaseCharacters);
+} else {
+  uppercaseCharacters = false;
+  console.log(uppercaseCharacters);
 }
