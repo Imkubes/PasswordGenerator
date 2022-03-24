@@ -42,3 +42,20 @@ generateBtn.addEventListener("click", writePassword);
 // Randomize characters from the joined arrays
 
 // Transforming the array into a string -- join method
+
+var passwordLength = prompt("How many characters would you like in your password? Must be a minimum of 8 characters and a maximum of 128 characters", "");
+console.log(passwordLength);
+
+passwordLength = parseInt(passwordLength);
+
+if (isNaN(passwordLength)) {
+  alert("You did not enter a valid number");
+} else if (passwordLength < 8) {
+  alert("The number must be greater than 8");
+} else if (passwordLength > 128) {
+  alert("The number must be less than 128")
+} else {
+  var passwordLengthNumber = (passwordLength);
+}
+
+console.log(typeof passwordLengthNumber);
