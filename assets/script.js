@@ -11,6 +11,10 @@ function writePassword() {
 }
 
 function generatePassword(){
+  for (var i =0; i <= passwordLength; i++) {
+    
+    password = [""];
+  }
   return "password";
 }
 
@@ -46,7 +50,6 @@ generateBtn.addEventListener("click", writePassword);
 
 //Prompting user for length desired for password
 var passwordLength = prompt("How many characters would you like in your password? Must be a minimum of 8 characters and a maximum of 128 characters", "");
-console.log(passwordLength);
 //Converting string to numeric data type
 passwordLength = parseInt(passwordLength);
 //else if statement making sure the user cannot enter regular characters, must be >= 8 <=128
@@ -61,6 +64,7 @@ if (isNaN(passwordLength)) {
 }
 
 console.log(typeof passwordLengthNumber);
+
 //Prompting if user wants special characters
 var specialCharacters = confirm("Would you like to include special character's? Press Ok for yes, Cancel for no.");
 
@@ -102,7 +106,14 @@ if (uppercaseCharacters == true) {
   console.log(uppercaseCharacters);
 }
 
+//if user enters no for all character types
+if (!specialCharacters && !numericCharacters && !lowercaseCharacters && !uppercaseCharacters) {
+  alert("You must choose atleast one of the criteria suggested!");
+}
+
 var specialCharacterArray = ["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", ">", "=", "?", "@", "[", "]", "^", "_", "`", "{", "}", "|", "~"];
 var numericCharacterArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var lowercaseCharacterArray = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"];
 var uppercaseCharacterArray = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Z", "X", "C", "V", "B", "N", "M"];
+
+var newPasswordArray = [];
