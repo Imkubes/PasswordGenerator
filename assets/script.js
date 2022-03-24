@@ -1,6 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+var specialCharacterArray = ["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", ">", "=", "?", "@", "[", "]", "^", "_", "`", "{", "}", "|", "~"];
+var numericCharacterArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var lowercaseCharacterArray = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"];
+var uppercaseCharacterArray = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Z", "X", "C", "V", "B", "N", "M"];
+
+var newPasswordArray = [];
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -11,14 +18,8 @@ function writePassword() {
 }
 
 function generatePassword(){
-  for (var i =0; i <= passwordLength; i++) {
-    if (numericCharacters == true && specialCharacters == true && lowercaseCharacters == true && uppercaseCharacters == true) {
-      password = [];
-    }
-    password = [""];
+  return newPass.join("");
   }
-  return "password";
-}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
@@ -72,50 +73,72 @@ var specialCharacters = confirm("Would you like to include special character's? 
 
 if (specialCharacters == true) {
   specialCharacters = true;
-  console.log(specialCharacters);
+  // console.log(specialCharacters);
 } else {
   specialCharacters = false;
-  console.log(specialCharacters);
+  // console.log(specialCharacters);
 }
 //Prompting if user wants numeric characters
 var numericCharacters = confirm("Would you like to include numbers? Press Ok for yes, Cancel for no.");
 
 if (numericCharacters == true) {
   numericCharacters = true;
-  console.log(numericCharacters);
+  // console.log(numericCharacters);
 } else {
   numericCharacters = false;
-  console.log(numericCharacters);
+  // console.log(numericCharacters);
 }
 //Prompting if user wants lower case characters
 var lowercaseCharacters = confirm("Would you like to include lower case letters? Press Ok for yes, Cancel for no.");
 
 if (lowercaseCharacters == true) {
   lowercaseCharacters = true;
-  console.log(lowercaseCharacters);
+  // console.log(lowercaseCharacters);
 } else {
   lowercaseCharacters = false;
-  console.log(lowercaseCharacters);
+  // console.log(lowercaseCharacters);
 }
 //Prompting if user wants upper case characters
 var uppercaseCharacters = confirm("Would you like to include upper case characters? Press Ok for yes, Cancel for no.");
 
 if (uppercaseCharacters == true) {
   uppercaseCharacters = true;
-  console.log(uppercaseCharacters);
+  // console.log(uppercaseCharacters);
 } else {
   uppercaseCharacters = false;
-  console.log(uppercaseCharacters);
+  // console.log(uppercaseCharacters);
 }
 
 //if user enters no for all character types
 if (!specialCharacters && !numericCharacters && !lowercaseCharacters && !uppercaseCharacters) {
   alert("You must choose atleast one of the criteria suggested!");
+} else {
+ if(specialCharacters){
+   console.log("specialCharacters");
+   newPasswordArray= newPasswordArray.concat(specialCharacterArray)
+ }
+ if(numericCharacters){
+  console.log("numericCharacters");
+  newPasswordArray= newPasswordArray.concat(numericCharacterArray)
+}
+if(lowercaseCharacters){
+  console.log("lowercaseCharacters");
+  newPasswordArray= newPasswordArray.concat(lowercaseCharacterArray)
+}
+if(uppercaseCharacters){
+  console.log("uppercaseCharacters");
+  newPasswordArray=newPasswordArray.concat(uppercaseCharacterArray)
+}
 }
 
-var specialCharacterArray = ["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", ">", "=", "?", "@", "[", "]", "^", "_", "`", "{", "}", "|", "~"];
-var numericCharacterArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var lowercaseCharacterArray = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"];
-var uppercaseCharacterArray = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Z", "X", "C", "V", "B", "N", "M"];
+console.log(newPasswordArray);
 
-var newPasswordArray = [];
+var newPass = [];
+for (var i = 1; i <= passwordLengthNumber; i++) {
+  // console.log(i);
+  var randomIndex = Math.floor(Math.random()*newPasswordArray.length);
+  console.log(randomIndex);
+  newPass.push(newPasswordArray[randomIndex])
+
+}
+console.log(newPass.join(""));
