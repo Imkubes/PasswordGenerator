@@ -12,7 +12,9 @@ function writePassword() {
 
 function generatePassword(){
   for (var i =0; i <= passwordLength; i++) {
-    
+    if (numericCharacters == true && specialCharacters == true && lowercaseCharacters == true && uppercaseCharacters == true) {
+      password = [];
+    }
     password = [""];
   }
   return "password";
