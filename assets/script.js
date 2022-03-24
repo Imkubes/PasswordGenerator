@@ -71,3 +71,13 @@ if (specialCharacters == true) {
   specialCharacters = false;
   console.log(specialCharacters);
 }
+
+var numericCharacters = confirm("Would you like to include numbers? Press Ok for yes, Cancel for no.");
+
+if (numericCharacters == true) {
+  numericCharacters = true;
+  console.log(numericCharacters);
+} else {
+  numericCharacters = false;
+  console.log(numericCharacters);
+}
